@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 	//Get ElementById function
-	function $(x){
+	function gE(x){
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Create select field element and populate with options
 	function makeCats() {
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $("select"),
+			selectLi = gE("select"),
 			makeSelect = document.createElement("select");
 			makeSelect.setAttribute("id", "groups");
 		for(var i=0, j=mealType.length; i<j; i++){
@@ -45,17 +45,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$("recipeForm").style.display = "none";
-				$("clear").style.display = "inline";
-				$("display").style.display = "none";
-				$("addNew").style.display = "inline";
+				gE("recipeForm").style.display = "none";
+				gE("clear").style.display = "inline";
+				gE("display").style.display = "none";
+				gE("addNew").style.display = "inline";
 				break;
 			case "off":
-				$("recipeForm").style.display = "block";
-				$("clear").style.display = "inline";
-				$("display").style.display = "inline";
-				$("addNew").style.display = "none";
-				$("items").style.display = "none";
+				gE("recipeForm").style.display = "block";
+				gE("clear").style.display = "inline";
+				gE("display").style.display = "inline";
+				gE("addNew").style.display = "none";
+				gE("items").style.display = "none";
 				break;
 			default:
 				return false;
@@ -76,12 +76,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Get all of our form field value and store in an object.
 		//Object properties contain array with the form label and input values.
 		var item 			= {};
-			item.recipename	= ["Recipe Name:", $("recipename").value];
-			item.groups 	= ["Group: ",$("groups").value];
-			item.rating		= ["Rating: ", $("rating").value];
-			item.date		= ["Date Added: ", $("date").value];
+			item.recipename	= ["Recipe Name:", gE("recipename").value];
+			item.groups 	= ["Group: ",gE("groups").value];
+			item.rating		= ["Rating: ", gE("rating").value];
+			item.date		= ["Date Added: ", gE("date").value];
 			item.checks 	= ["Meal Time: " , tcheckedBoxes];
-			item.directions = ["Directions: ", $("directions").value];
+			item.directions = ["Directions: ", gE("directions").value];
 		//Save data into Local Storage: Use Stringify to convert the object to a string.
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recipe Saved!");
@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$("items").style.display = "block";
+		gE("items").style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeLi = document.createElement("li");
 			makeLi.setAttribute("id", "ele");
@@ -178,11 +178,11 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");
 
 		//Populate form fields w/current lstorage vals
-		$("groups").value = item.groups[1];
-		$("recipename").value = item.recipename[1];
-		$("rating").value = item.rating[1];
-		$("date").value = item.date[1];
-		$("directions").value = item.directions[1];
+		gE("groups").value = item.groups[1];
+		gE("recipename").value = item.recipename[1];
+		gE("rating").value = item.rating[1];
+		gE("date").value = item.date[1];
+		gE("directions").value = item.directions[1];
 		
 		var placeValues = function(){
 			var checkboxes = document.forms[0].mealTime;
@@ -200,8 +200,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		//remove initial listener from the input 'save recipe' button
 		save.removeEventListener("click", storeData);
 		//Change submit button value to Edit Button
-		$("submit").value = "Edit Recipe";
-		var editSubmit = $("submit");
+		gE("submit").value = "Edit Recipe";
+		var editSubmit = gE("submit");
 		//save the key value estab in this func as a prpty of the editSubmit event
 		//so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", validate);
@@ -232,9 +232,9 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	function validate(e){
 		//define elements we want to check
-		var getGroup = $("groups");
-		var getRecipeName = $("recipename");
-		var getDirections = $("directions");
+		var getGroup = gE("groups");
+		var getRecipeName = gE("recipename");
+		var getDirections = gE("directions");
 
 		//Reset Error Messages
 		errMsg.innerHTML = "";
@@ -286,17 +286,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Variable Defaults
 	var mealType = ["--Select--", "Chicken", "Beef", "Pork", "Veggie"],
 		tcheckedBoxes,
-		errMsg = $("errors")
+		errMsg = gE("errors")
 	;
 
 	makeCats();
 
 	//Set Link and Submit Click Events
-	var displayLink = $("display");
+	var displayLink = gE("display");
 	displayLink.addEventListener("click", getData);
-	var clearLink = $("clear");
+	var clearLink = gE("clear");
 	clearLink.addEventListener("click", clearLocal);
-	var save = $("submit");
+	var save = gE("submit");
 	save.addEventListener("click", validate);
 
 
