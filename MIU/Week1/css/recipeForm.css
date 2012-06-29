@@ -5,6 +5,11 @@ body{
 	background:#A67425;
 }
 
+#home p {
+	text-align:center;
+	font-family:Tahoma, "Geneva", sans-serif;
+}
+
 #items{
 	font-style:bold;
 	border: 1px solid black;
@@ -41,23 +46,13 @@ label{
 	border: 1px solid black;
 	background: #FFC973;
 	text-align:center;	
-}
-
-h2 {
-	font-family: Arial, "MS Trebuchet", sans-serif;
-	text-align:center;
-	padding: 8px;
-	border: 1px solid black;
-	background: #FFE1B2;
-	
-
 }*/
 
-nav {
-	padding-bottom:20px;
-
-
+h2 {
+	text-align:center;	
 }
+
+
 
 a {
  padding: 2px;
@@ -76,10 +71,15 @@ body>a{
 	border:1px solid black;
 	color:#FFC973;
 	margin-left:20px;
-	padding:10px;
-
-	
+	padding:10px;	
 }
+
+/*div img {
+        height:100%;
+        width: 100%;
+        max-width:100%;
+        max-height:100%;
+    }*/
 
 label {
 	font-family:  Arial, "MS Trebuchet", sans-serif;

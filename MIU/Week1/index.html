@@ -26,19 +26,22 @@
 
 	<div data-role="page" id="home">
 
+		<!-- header -->
 		<div data-role="header" data-position="fixed">
 			<h1>Recipe Keeper</h1>
 		</div>
 
-		<div data-role="content">
-			<p>Your Mobile Cookbook!</p>
-			<h2><a href="additem.html" data-role="button" data-icon="plus" data-iconpos="right" data-ajax="false" >Add a Recipe Now!</a></h2>
+		<!-- content with cta link and image-->
+		<div data-role="content" data-theme="a" img>
+			<h2>Your Mobile Cookbook!</h2>
+			<h2><a href="additem.html" data-role="button" data-icon="plus" data-iconpos="right" data-theme="e" data-ajax="false">Add a Recipe Now!</a></h2>
+			<div style="text-align: center;"><IMG SRC="images/sushi70.png" ALT="sushipic"></div>
 		</div>
 
-
-		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search Recipes...">
-			<li data-role="list-divider">Browse Recipes by...</li>
-			<li><a href="#add" data-mini="true" data-theme="e">
+		<!-- navigation (browse) list -->
+		<ul data-role="listview" data-filter="true" data-filter-placeholder="Search Recipes..." >
+			<li data-role="list-divider" >Browse Recipes by...</li>
+			<li><a href="#add">
 				<h3>Chicken</h3>
 			</a></li>
 			<li><a href="#add">
@@ -62,6 +65,7 @@
 
 	</div>
 
+	<!-- generic landing page (for now) -->
 	<div data-role="page" id="add" data-add-back-btn="true">
 
 		<div data-role="header" data-position="fixed">
