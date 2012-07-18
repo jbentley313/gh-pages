@@ -3,11 +3,7 @@
 //Project 3
 
 
-var parseRecipeForm = function(data){
-	//uses form data here
-	console.log(data);
 
-};
 
 //Wait until the DOM is ready
 $(document).bind("pageinit", function(){
@@ -30,11 +26,29 @@ $(document).bind("pageinit", function(){
 		return theElement;
 	}
 
-
+// function toggleControls(n){
+// 		switch(n){
+// 			case "on":
+// 				gE("addRecipeForm").style.display = "none";
+// 				gE("clear").style.display = "inline";
+// 				gE("display").style.display = "none";
+// 				gE("addNew").style.display = "inline";
+// 				break;
+// 			case "off":
+// 				gE("addRecipeForm").style.display = "block";
+// 				gE("clear").style.display = "inline";
+// 				gE("display").style.display = "inline";
+// 				gE("addNew").style.display = "none";
+// 				gE("items").style.display = "none";
+// 				break;
+// 			default:
+// 				return false;
+// 		}
+// 	}
 	
 
 	function getCheckboxValues(){
-		 	var	checkBoxes = document.forms[0].mealTime;
+		 	var	checkBoxes = $("mealTime");
 				tcheckedBoxes = [];
 		for(var i=0; i<checkBoxes.length; i++){
 			if(checkBoxes[i].checked){
@@ -70,6 +84,7 @@ $(document).bind("pageinit", function(){
 		//Save data into Local Storage: Use Stringify to convert the object to a string.
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Recipe Saved!");
+
 	}
 	function getData(){
 		// toggleControls("on");
@@ -161,7 +176,7 @@ $(document).bind("pageinit", function(){
 		var item = JSON.parse(value);
 
 		//Show form
-		toggleControls("off");
+		// toggleControls("off");
 
 		//Populate form fields w/current lstorage vals
 		gE("groups").value = item.groups[1];
@@ -171,7 +186,7 @@ $(document).bind("pageinit", function(){
 		gE("directions").value = item.directions[1];
 		
 		var placeValues = function(){
-			var checkboxes = document.forms[0].mealTime;
+			var checkboxes = $("mealTime");
 			for(i=0, j=checkboxes.length; i<j; i++){
 				for(n=0, m=item.checks[1].length; n<m; n++){
 					if(checkboxes[i].value === item.checks[1][n]){
@@ -221,14 +236,19 @@ $(document).bind("pageinit", function(){
 	//Variable Defaults
 	var tcheckedBoxes
 	;
+	var parseRecipeForm = function(data){
+		//uses form data here
+		console.log(data);
+		storeData();
 
+	};
 	
 
 	//Set Link and Submit Click Events
 	var displayLink = gE("display");
 	displayLink.addEventListener("click", getData);
-	// var clearLink = gE("clear");
-	// clearLink.addEventListener("click", clearLocal);
+	var clearLink = gE("clear");
+	clearLink.addEventListener("click", clearLocal);
 	// var save = gE("submit");
 	// save.addEventListener("click", validate);
 
