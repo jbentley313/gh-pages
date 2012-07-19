@@ -245,7 +245,7 @@ function toggleControls(n){
 	
 
 	//Set Link and Submit Click Events
-	var displayLink = gE("display");
+	var displayLink = gE("display1");
 	displayLink.addEventListener("click", getData);
 	var clearLink = gE("clear");
 	clearLink.addEventListener("click", clearLocal);
