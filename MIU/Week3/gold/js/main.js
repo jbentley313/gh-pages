@@ -88,6 +88,8 @@ $(document).bind("pageinit", function(){
 	}
 	function getData(){
 		// toggleControls("on");
+
+
 		if(localStorage.length === 0){
 			alert("There are no recipes to display! Default Data has been populated!");
 			autoFillData();			
@@ -186,7 +188,7 @@ $(document).bind("pageinit", function(){
 		gE("directions").value = item.directions[1];
 		
 		var placeValues = function(){
-			var checkboxes = $("mealTime");
+			var checkboxes = document.getElementById("addRecipeForm").mealTime;
 			for(i=0, j=checkboxes.length; i<j; i++){
 				for(n=0, m=item.checks[1].length; n<m; n++){
 					if(checkboxes[i].value === item.checks[1][n]){
@@ -210,6 +212,7 @@ $(document).bind("pageinit", function(){
 		//so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", submit);
 		editSubmit.key = this.key;
+
 	};
 
 	function deleteItem(){
@@ -217,7 +220,7 @@ $(document).bind("pageinit", function(){
 		if(ask){
 			localStorage.removeItem(this.key);
 			alert("Recipe was deleted!");
-			window.location.reload(false);
+			window.location.reload();
 
 		}else{
 			alert("Recipe was NOT deleted.");
