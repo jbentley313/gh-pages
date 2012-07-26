@@ -37,14 +37,14 @@
 			<p class="my_icon_wrapper2">
 				<img src="images/sushi2.png" height="100" width="270">
 			</p>
-			<a href="#addRecipe" data-role="button" id="addNew" data-icon="plus" data-iconpos="right" data-theme="e">Add a Recipe Now!</a>
+			<a href="#addRecipe" data-role="button" id="addNew" data-icon="plus" data-iconpos="right" >Add a Recipe Now!</a>
 			<a href="#display1"  data-role="button" id="display1" data-icon="star" data-iconpos="right">My Recipe Book</a>		
 		</div>
 
 
 		<!-- navigation (browse) list -->
 		<div data-role="content" data-theme="a">
-			<ul data-role="listview" data-filter="true" data-filter-placeholder="Search Recipes..." data-theme="c">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Search Recipes..." data-theme="a">
 				<li data-role="list-divider">Browse Recipes by...</li>
 				<li><a href="#add" data-transition="slide">
 					<p class="my_icon_wrapper">
@@ -80,7 +80,7 @@
 		</div>
 
 		<!-- footer navbar-->
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -108,7 +108,7 @@
 			</div>
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -136,7 +136,7 @@
 			
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -181,7 +181,7 @@
 			</ul>
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -210,7 +210,7 @@
 			</div>	
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -239,7 +239,7 @@
 			
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -268,7 +268,7 @@
 			
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -296,7 +296,7 @@
 			
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -325,7 +325,7 @@
 			
 		</div>
 
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
@@ -350,23 +350,23 @@
 			</p>
 	</div>
 
-	<div data-role="content">
+	<div data-role="content" data-theme="a">
 
 		<form action="" method="post" id="addRecipeForm">
 
 			<div data-role="fieldcontain">
 				<label for="recipename">Recipe Name:</label>
-				<input type="text" name="recipename" id="recipename" class="required"/>			
+				<input type="text" name="recipename" id="recipename" class="required" data-theme="a"/>			
 			</div>
 
 			<div data-role="fieldcontain">
 				<label for="rating">Recipe Rating:</label>
-				<input type="range" name="rating" id="rating" value="10" min="0" max="10" />	
+				<input type="range" name="rating" id="rating" value="10" min="0" max="10" data-theme="a"/>	
 			</div>
 
 			<div data-role="fieldcontain">
 				<label for="groups">Meal Type</label>
-				<select name="groups" id="groups" data-native-menu="false"  data-theme="c"  class="required">
+				<select name="groups" id="groups" data-native-menu="false"  data-theme="a"  class="required">
 					<option data-placeholder="true" value>Please Select One</option>
 					<optgroup label="Meal Type:">
 						<option value="Chicken">Chicken</option>
@@ -379,21 +379,21 @@
 
 			<div data-role="fieldcontain">
 				<label for="date">Date Added</label>
-				<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}'>	
+				<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' data-theme="a">	
 			</div>
 
 			
 
 			<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup">
+				<fieldset data-role="controlgroup" >
 					<legend>Meal Time:</legend>
-					<input type="checkbox" value="appetizer" name="mealTime" id="appetizer"/>
+					<input type="checkbox" value="appetizer" name="mealTime" id="appetizer" data-theme="a"/>
 					<label for="appetizer">Appetizer</label>
-					<input type="checkbox" value="breakfast" name="mealTime" id="breakfast"/>
+					<input type="checkbox" value="breakfast" name="mealTime" id="breakfast" data-theme="a"/>
 					<label for="breakfast">Breakfast</label>
-					<input type="checkbox" value="lunch" name="mealTime" id="lunch"/>
+					<input type="checkbox" value="lunch" name="mealTime" id="lunch" data-theme="a"/>
 					<label for="lunch">Lunch</label>
-					<input type="checkbox" value="dinner" name="mealTime" id="dinner"/>
+					<input type="checkbox" value="dinner" name="mealTime" id="dinner" data-theme="a"/>
 					<label for="dinner">Dinner</label>
 				</fieldset>		
 			</div>
@@ -402,18 +402,18 @@
 
 			<div data-role="fieldcontain" >
 				<label for="directions">Directions:</label>
-				<textarea name="directions" id="directions" class="required"></textarea >
+				<textarea name="directions" id="directions" data-theme="a" class="required"></textarea >
 			</div>
 			
 
 			<div data-role="fieldcontain">
-				<input type="submit" value="Save Recipe" id="submit" data-theme="b"/>
-				<input type="reset" value="Reset" data-theme="a"/>			
+				<input type="submit" value="Save Recipe" id="submit" data-theme="a"/>
+				<input type="reset" value="Reset" />			
 			</div>
 
 
 		</form>
-		<div data-role="footer" data-position="fixed" data-id="home">
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#home" data-icon="home">Home</a></li>
